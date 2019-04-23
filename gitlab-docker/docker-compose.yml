@@ -1,0 +1,21 @@
+web:
+  image: 'gitlab/gitlab-ce:11.4.7-ce.0'
+  restart: always
+  hostname: 'gitlab.example.com'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'http://gitlab.example.com'
+      redis['bind']='127.0.0.1'
+      redis['port']=6379
+      gitlab_rails['initial_root_password']=File.read('/steg0_initial_root_password')
+  ports:
+    - '5080:80'
+    - '50443:443'
+    - '5022:22'
+  volumes:
+    - './srv/gitlab/config:/etc/gitlab'
+    - './srv/gitlab/logs:/var/log/gitlab'
+    - './srv/gitlab/data:/var/opt/gitlab'
+    - './steg0_initial_root_password:/steg0_initial_root_password'
+    - './flag:/flag:ro'
+
