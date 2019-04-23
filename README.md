@@ -1,5 +1,5 @@
-# gitlab-SSRF-redis-RCE
-GitLab 11.4.7 SSRF+CRLF注入 配合redis远程执行代码
+# gitlab-SSRF+CRLF-Redis-RCE
+GitLab 11.4.7 SSRF+CRLF注入 配合Redis远程执行代码
 
 ## 0x00 Vulnerability environment
 ```
