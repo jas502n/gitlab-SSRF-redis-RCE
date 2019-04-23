@@ -9,8 +9,7 @@ root@kali:~# docker ps -a
 CONTAINER ID        IMAGE                          COMMAND              CREATED             STATUS                 PORTS                                                                NAMES
 cf8c38aef669        gitlab/gitlab-ce:11.4.7-ce.0   "/assets/wrapper"    3 hours ago         Up 3 hours (healthy)   0.0.0.0:5022->22/tcp, 0.0.0.0:5080->80/tcp, 0.0.0.0:50443->443/tcp   gitlab_web_1
 
-root@ubuntu:~# docker exec -it cf8c38aef669 /bin/bash
-
+root@kali:~# docker exec -it cf8c38aef669 /bin/bash
 root@gitlab:/# cat /var/opt/gitlab/gitlab-rails/VERSION
 11.4.7
 root@gitlab:/# 
